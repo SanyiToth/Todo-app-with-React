@@ -40,7 +40,8 @@ function App() {
     }
 
     const getLocalTodos = () => {
-        setTodos(JSON.parse(localStorage.getItem('todos')));
+        JSON.parse(localStorage.getItem('todos')) === null ?
+            setTodos([]) : setTodos(JSON.parse(localStorage.getItem('todos')))
     }
     return (
         <div className="App">
